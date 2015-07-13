@@ -2141,22 +2141,6 @@ module quantlib {
                         [in] any ObjectId,
                         [in] any Trigger);
 
-                sequence<sequence<any> > qlTenorSwapRateHelper(
-                        [in] any ObjectId,
-                        [in] any Rate,
-                        [in] any Tenor,
-                        [in] any Calendar,
-                        [in] any FixedLegFrequency,
-                        [in] any FixedLegConvention,
-                        [in] any FixedLegDayCounter,
-                        [in] any IborIndex,
-                        [in] any Spread,
-                        [in] any ForwardStart,
-                        [in] any DiscountingCurve,
-                        [in] long Permanent,
-                        [in] any Trigger,
-                        [in] long Overwrite);
-
                 // schedule
 
                 sequence<sequence<any> > qlSchedule(

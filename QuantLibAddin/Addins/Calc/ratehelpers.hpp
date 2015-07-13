@@ -222,22 +222,6 @@
         const ANY &ObjectId,
         const ANY &Trigger) throw(RuntimeException);
 
-    SEQSEQ(ANY) SAL_CALL qlTenorSwapRateHelper(
-        const ANY &ObjectId,
-        const ANY &Rate,
-        const ANY &Tenor,
-        const ANY &Calendar,
-        const ANY &FixedLegFrequency,
-        const ANY &FixedLegConvention,
-        const ANY &FixedLegDayCounter,
-        const ANY &IborIndex,
-        const ANY &Spread,
-        const ANY &ForwardStart,
-        const ANY &DiscountingCurve,
-        const sal_Int32 Permanent,
-        const ANY &Trigger,
-        const sal_Int32 Overwrite) throw(RuntimeException);
-
 
 
 #endif

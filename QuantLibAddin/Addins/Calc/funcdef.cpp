@@ -4979,41 +4979,6 @@ CalcAddins_impl::CalcAddins_impl() throw ()  {
     argName[ STRFROMANSI( "qlSwapRateHelperSpread" ) ].push_back( STRFROMANSI( "Trigger" ) );
     argDesc[ STRFROMANSI( "qlSwapRateHelperSpread" ) ].push_back( STRFROMANSI( "dependency tracking trigger" ) );
 
-    // qlTenorSwapRateHelper
-
-    funcMap[ STRFROMANSI( "qlTenorSwapRateHelper" ) ]
-        =  STRFROMANSI( "qlTenorSwapRateHelper" );
-    funcDesc[ STRFROMANSI( "qlTenorSwapRateHelper" ) ]
-        =  STRFROMANSI( "Construct an object of class TenorSwapRateHelper and return its id" );
-    argName[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "ObjectId" ) );
-    argDesc[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "id of object to be created" ) );
-    argName[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "Rate" ) );
-    argDesc[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "quote." ) );
-    argName[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "Tenor" ) );
-    argDesc[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "swap length (e.g. 5Y for five years)." ) );
-    argName[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "Calendar" ) );
-    argDesc[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "holiday calendar (e.g. TARGET)." ) );
-    argName[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "FixedLegFrequency" ) );
-    argDesc[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "fixed leg frequency (e.g. Annual, Semiannual, Every4Month, Quarterly, Bimonthly, Monthly)." ) );
-    argName[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "FixedLegConvention" ) );
-    argDesc[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "fixed leg convention (e.g. Unadjusted)." ) );
-    argName[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "FixedLegDayCounter" ) );
-    argDesc[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "day counter (e.g. Actual/360)." ) );
-    argName[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "IborIndex" ) );
-    argDesc[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "floating leg IborIndex object ID." ) );
-    argName[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "Spread" ) );
-    argDesc[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "floating leg spread." ) );
-    argName[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "ForwardStart" ) );
-    argDesc[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "forward start period." ) );
-    argName[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "DiscountingCurve" ) );
-    argDesc[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "discounting YieldTermStructure object ID." ) );
-    argName[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "Permanent" ) );
-    argDesc[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "object permanent/nonpermanent" ) );
-    argName[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "Trigger" ) );
-    argDesc[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "dependency tracking trigger" ) );
-    argName[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "Overwrite" ) );
-    argDesc[ STRFROMANSI( "qlTenorSwapRateHelper" ) ].push_back( STRFROMANSI( "overwrite flag" ) );
-
     // Schedules
 
     // qlSchedule
