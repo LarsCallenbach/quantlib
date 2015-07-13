@@ -36,22 +36,6 @@
         const ANY &Trigger,
         const sal_Int32 Overwrite) throw(RuntimeException);
 
-    SEQSEQ(ANY) SAL_CALL qlEUHICP(
-        const ANY &ObjectId,
-        const sal_Int32 Interpolated,
-        const ANY &ZeroInflationCurve,
-        const sal_Int32 Permanent,
-        const ANY &Trigger,
-        const sal_Int32 Overwrite) throw(RuntimeException);
-
-    SEQSEQ(ANY) SAL_CALL qlEUHICPXT(
-        const ANY &ObjectId,
-        const sal_Int32 Interpolated,
-        const ANY &ZeroInflationCurve,
-        const sal_Int32 Permanent,
-        const ANY &Trigger,
-        const sal_Int32 Overwrite) throw(RuntimeException);
-
     SEQSEQ(ANY) SAL_CALL qlEonia(
         const ANY &ObjectId,
         const ANY &YieldCurve,
