@@ -51,6 +51,7 @@ class BehaviorLoop(object):
             'functionCodeName' : self.functionCodeName_,
             'functionName' : self.functionName_,
             'functionSignature' : functionSignature,
+            'objectName': self.func_.objectId(), 
             'inputType' : addin.loopReturnType().apply(self.loopParamRef_),
             'returnType' : addin.loopReturnType().apply(self.func_.returnValue()) })
         return addin.bufferLoop().text()

@@ -272,6 +272,16 @@
           <libraryClass>QuantLib::FDAmericanEngine</libraryClass>
         </EnumeratedClass>
         <EnumeratedClass>
+          <string>DIVFDA</string>
+          <value>DIVFDA_Engine</value>
+          <libraryClass>QuantLib::FDDividendAmericanEngineShiftScale</libraryClass>
+        </EnumeratedClass>
+        <EnumeratedClass>
+          <string>DIVMFDA</string>
+          <value>DIVMFDA_Engine</value>
+          <libraryClass>QuantLib::FDDividendAmericanEngineMerton73</libraryClass>
+        </EnumeratedClass>
+        <EnumeratedClass>
           <string>FDB</string>
           <value>FDB_Engine</value>
           <libraryClass>QuantLib::FDBermudanEngine</libraryClass>
@@ -280,6 +290,16 @@
           <string>FDE</string>
           <value>FDE_Engine</value>
           <libraryClass>QuantLib::FDEuropeanEngine</libraryClass>
+        </EnumeratedClass>
+        <EnumeratedClass>
+          <string>DIVFDE</string>
+          <value>DIVFDE_Engine</value>
+          <libraryClass>QuantLib::FDDividendEuropeanEngineShiftScale</libraryClass>
+        </EnumeratedClass>
+        <EnumeratedClass>
+          <string>DIVMFDE</string>
+          <value>DIVMFDE_Engine</value>
+          <libraryClass>QuantLib::FDDividendEuropeanEngineMerton73</libraryClass>
         </EnumeratedClass>
         <EnumeratedClass>
           <string>JOSHI</string>

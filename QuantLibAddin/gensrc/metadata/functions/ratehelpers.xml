@@ -30,10 +30,9 @@
   </addinIncludes>
   <copyright>
     Copyright (C) 2005, 2006 Eric Ehlers
-    Copyright (C) 2006, 2007, 2008, 2009, 2015 Ferdinando Ametrano
+    Copyright (C) 2006, 2007, 2008, 2009 Ferdinando Ametrano
     Copyright (C) 2005 Plamen Neykov
     Copyright (C) 2005 Aurelien Chanudet
-    Copyright (C) 2015 Maddalena Zanzi
   </copyright>
   <Functions>
 
@@ -71,24 +70,24 @@
       </ReturnValue>
     </Member>
 
-    <Member name='qlRateHelperQuoteName' type='QuantLibAddin::RateHelper'>
-      <description>returns the objectID of the Quote wrapped in the given RateHelper object.</description>
-      <libraryFunction>quoteName</libraryFunction>
-      <SupportedPlatforms>
-        <SupportedPlatform name='Excel'/>
-        <SupportedPlatform name='Calc'/>
-        <SupportedPlatform name='Cpp'/>
-      </SupportedPlatforms>
-      <ParameterList>
-        <Parameters/>
-      </ParameterList>
-      <ReturnValue>
-        <type>string</type>
-        <tensorRank>scalar</tensorRank>
-      </ReturnValue>
-    </Member>
+      <Member name='qlRateHelperQuoteName' type='QuantLibAddin::RateHelper'>
+          <description>returns the objectID of the Quote wrapped in the given RateHelper object.</description>
+          <libraryFunction>quoteName</libraryFunction>
+          <SupportedPlatforms>
+              <SupportedPlatform name='Excel'/>
+              <SupportedPlatform name='Calc'/>
+              <SupportedPlatform name='Cpp'/>
+          </SupportedPlatforms>
+          <ParameterList>
+              <Parameters/>
+          </ParameterList>
+          <ReturnValue>
+              <type>string</type>
+              <tensorRank>scalar</tensorRank>
+          </ReturnValue>
+      </Member>
 
-    <Member name='qlRateHelperQuoteValue' type='QuantLib::RateHelper'>
+      <Member name='qlRateHelperQuoteValue' type='QuantLib::RateHelper'>
       <description>returns the value of the Quote wrapped in the given RateHelper object.</description>
       <libraryFunction>quote()->value</libraryFunction>
       <SupportedPlatforms>
@@ -288,11 +287,6 @@
             <tensorRank>scalar</tensorRank>
             <description>quote.</description>
           </Parameter>
-          <Parameter name='SettlDays' default='2'>
-            <type>QuantLib::Natural</type>
-            <tensorRank>scalar</tensorRank>
-            <description>Number of days to spot date.</description>
-          </Parameter>
           <Parameter name='Tenor' exampleValue='10Y'>
             <type>QuantLib::Period</type>
             <tensorRank>scalar</tensorRank>
@@ -344,13 +338,80 @@
       </ParameterList>
     </Constructor>
 
+    <Constructor name='qlTenorSwapRateHelper'>
+      <libraryFunction>TenorSwapRateHelper</libraryFunction>
+      <SupportedPlatforms>
+        <!--SupportedPlatform name='Excel' calcInWizard='false'/-->
+        <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Calc'/>
+        <SupportedPlatform name='Cpp'/>
+      </SupportedPlatforms>
+      <ParameterList>
+        <Parameters>
+          <Parameter name='Rate' exampleValue='0.042322'>
+            <type>QuantLib::Quote</type>
+            <superType>libToHandle</superType>
+            <tensorRank>scalar</tensorRank>
+            <description>quote.</description>
+          </Parameter>
+          <Parameter name='Tenor' exampleValue='10Y'>
+            <type>QuantLib::Period</type>
+            <tensorRank>scalar</tensorRank>
+            <description>swap length (e.g. 5Y for five years).</description>
+          </Parameter>
+          <Parameter name='Calendar' exampleValue='TARGET'>
+            <type>QuantLib::Calendar</type>
+            <tensorRank>scalar</tensorRank>
+            <description>holiday calendar (e.g. TARGET).</description>
+          </Parameter>
+          <Parameter name='FixedLegFrequency' exampleValue='Annual'>
+            <type>QuantLib::Frequency</type>
+            <tensorRank>scalar</tensorRank>
+            <description>fixed leg frequency (e.g. Annual, Semiannual, Every4Month, Quarterly, Bimonthly, Monthly).</description>
+          </Parameter>
+          <Parameter name='FixedLegConvention' exampleValue='ModifiedFollowing'>
+            <type>QuantLib::BusinessDayConvention</type>
+            <tensorRank>scalar</tensorRank>
+            <description>fixed leg convention (e.g. Unadjusted).</description>
+          </Parameter>
+          <Parameter name='FixedLegDayCounter' exampleValue='30/360 (Bond Basis)'>
+            <type>QuantLib::DayCounter</type>
+            <tensorRank>scalar</tensorRank>
+            <description>day counter (e.g. Actual/360).</description>
+          </Parameter>
+          <Parameter name='IborIndex' exampleValue='Euribor6M'>
+            <type>QuantLib::IborIndex</type>
+            <tensorRank>scalar</tensorRank>
+            <description>floating leg IborIndex object ID.</description>
+          </Parameter>
+          <Parameter name='Spread' exampleValue='0.0'>
+            <type>QuantLib::Quote</type>
+            <superType>libToHandle</superType>
+            <tensorRank>scalar</tensorRank>
+            <description>floating leg spread.</description>
+          </Parameter>
+          <Parameter name='ForwardStart' exampleValue='"0D"'>
+            <type>QuantLib::Period</type>
+            <tensorRank>scalar</tensorRank>
+            <description>forward start period.</description>
+          </Parameter>
+          <Parameter name='DiscountingCurve' exampleValue='EURYC'>
+            <type>QuantLib::YieldTermStructure</type>
+            <superType>libToHandle</superType>
+            <tensorRank>scalar</tensorRank>
+            <description>discounting YieldTermStructure object ID.</description>
+          </Parameter>
+        </Parameters>
+      </ParameterList>
+    </Constructor>
+
     <Member name='qlSwapRateHelperSpread' type='QuantLib::SwapRateHelper'>
       <description>returns the spread for the given SwapRateHelper object.</description>
       <libraryFunction>spread</libraryFunction>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
-        <!--SupportedPlatform name='Calc'/-->
-        <!--SupportedPlatform name='Cpp'/-->
+	<SupportedPlatform name='Calc'/>
+	<!--SupportedPlatform name='Cpp'/-->
       </SupportedPlatforms>
       <ParameterList>
         <Parameters/>
@@ -366,7 +427,7 @@
       <libraryFunction>forwardStart</libraryFunction>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
-        <!--SupportedPlatform name='Calc'/-->
+        <SupportedPlatform name='Calc'/>
         <!--SupportedPlatform name='Cpp'/-->
       </SupportedPlatforms>
       <ParameterList>
@@ -671,7 +732,7 @@
       <libraryFunction>convexityAdjustment</libraryFunction>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
-        <!--SupportedPlatform name='Calc'/-->
+        <SupportedPlatform name='Calc'/>
         <!--SupportedPlatform name='Cpp'/-->
       </SupportedPlatforms>
       <ParameterList>
@@ -699,15 +760,10 @@
             <tensorRank>scalar</tensorRank>
             <description>price quote.</description>
           </Parameter>
-          <Parameter name='FuturesType' default='"IMM"'>
-            <type>QuantLib::Futures::Type</type>
-            <tensorRank>scalar</tensorRank>
-            <description>Futures type.</description>
-          </Parameter>
-          <Parameter name='FuturesDate'>
+          <Parameter name='IMM' exampleValue='H2'>
             <type>QuantLib::Date</type>
             <tensorRank>scalar</tensorRank>
-            <description>Futures date (IborIndex start date).</description>
+            <description>IMM date (or code).</description>
           </Parameter>
           <Parameter name='IborIndex' default='"Euribor3M"'>
             <type>QuantLib::IborIndex</type>
@@ -740,15 +796,10 @@
             <tensorRank>scalar</tensorRank>
             <description>price quote.</description>
           </Parameter>
-          <Parameter name='FuturesType' default='"IMM"'>
-            <type>QuantLib::Futures::Type</type>
-            <tensorRank>scalar</tensorRank>
-            <description>Futures type.</description>
-          </Parameter>
-          <Parameter name='FuturesDate'>
+          <Parameter name='IMM' exampleValue='H2'>
             <type>QuantLib::Date</type>
             <tensorRank>scalar</tensorRank>
-            <description>Futures date (IborIndex start date).</description>
+            <description>IMM date (or code).</description>
           </Parameter>
           <Parameter name='LengthInMonths' default='3'>
             <type>long</type>
@@ -801,15 +852,10 @@
             <tensorRank>scalar</tensorRank>
             <description>price quote.</description>
           </Parameter>
-          <Parameter name='FuturesType' default='"IMM"'>
-            <type>QuantLib::Futures::Type</type>
-            <tensorRank>scalar</tensorRank>
-            <description>Futures type.</description>
-          </Parameter>
-          <Parameter name='FuturesDate'>
+          <Parameter name='IMM' exampleValue='H2'>
             <type>QuantLib::Date</type>
             <tensorRank>scalar</tensorRank>
-            <description>Futures date (IborIndex start date).</description>
+            <description>IMM date (or code).</description>
           </Parameter>
           <Parameter name='EndDate' default='QuantLib::Date()'>
             <type>QuantLib::Date</type>
@@ -835,7 +881,7 @@
       <description>selects rate helpers for bootstrapping.</description>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
-        <!--SupportedPlatform name='Calc'/-->
+	<!--SupportedPlatform name='Calc'/-->
       </SupportedPlatforms>
       <ParameterList>
         <Parameters>
