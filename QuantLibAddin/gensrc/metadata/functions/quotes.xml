@@ -65,7 +65,7 @@
       <libraryFunction>isValid</libraryFunction>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
-	<!--SupportedPlatform name='Calc'/-->
+	<SupportedPlatform name='Calc'/>
         <!--SupportedPlatform name='Cpp'/-->
       </SupportedPlatforms>
       <ParameterList>
@@ -98,7 +98,7 @@
     <!-- Use a QuantLibAddin::SimpleQuote rather than a QuantLib::SimpleQuote.
          Note that if necessary the required reference is extracted automatically
          from a Handle<Quote>.-->
-    <Member name='qlSimpleQuoteSetValue' type='QuantLibAddin::SimpleQuote' superType='objectQuote'>
+    <Member name='qlSimpleQuoteSetValue' type='QuantLib::SimpleQuote' superType='libraryQuote'>
       <description>sets a new value to the given SimpleQuote object and returns the difference with the previous value.</description>
       <libraryFunction>setValue</libraryFunction>
       <SupportedPlatforms>
@@ -279,7 +279,7 @@
       </ReturnValue>
     </Procedure>
 
-    <Constructor name='qlSimpleQuote'>
+    <Constructor name='qlSimpleQuote' type='QuantLib::Quote' superType='libraryQuote'>>
       <libraryFunction>SimpleQuote</libraryFunction>
       <SupportedPlatforms>
         <!--SupportedPlatform name='Excel' calcInWizard='false'/-->
